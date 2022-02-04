@@ -1,6 +1,6 @@
 console.log("I am here")
 /*-------------------------------- Constants --------------------------------*/
-/
+
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -8,7 +8,8 @@ console.log("I am here")
   // None of these variables will need to hold a value when they are defined
 
 	// 1.1) Use an array to represent the squares on the board.    
-let squares = [0, 1,2, 3, 4, 5, 6, 7, 8]
+
+let squares, turn, winner
 	// 1.2) Use a turn variable to track whose turn it is.
 
 	// 1.3) Use a winner variable to represent three different game states:
@@ -19,11 +20,20 @@ let squares = [0, 1,2, 3, 4, 5, 6, 7, 8]
 
 /*------------------------ Cached Element References ------------------------*/
 
+const boardSquares = document.querySelector(".board")
+console.log(boardSquares);
 
-
+// const boardSquares = document.querySelector("#message")
 /*----------------------------- Event Listeners -----------------------------*/
 
+boardSquares.addEventListener("click", handleClick);
+
+/*-------------------------------- Functions -------------------------------*/
 
 
-/*-------------------------------- Functions --------------------------------*/
 
+function handleClick(event) {
+console.log(event.target.id)
+  
+}
+console.log(boardSquares)
