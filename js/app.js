@@ -1,39 +1,69 @@
-console.log("I am here")
+console.log('f in chat')
+
+
+
 /*-------------------------------- Constants --------------------------------*/
 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-//// 1) Define the required variables used to track the state of the game:
-  // None of these variables will need to hold a value when they are defined
-
-	// 1.1) Use an array to represent the squares on the board.    
-
-let squares, turn, winner
-	// 1.2) Use a turn variable to track whose turn it is.
-
-	// 1.3) Use a winner variable to represent three different game states:
-	  // a player that won
-	  // a tie has occured
-	  // or a game that is still in play.
-
-
+let squares, winner, turn
+// const player0 = -1
+// const playerX =  1
+// winner = null 
+// let tie= 'T'
 /*------------------------ Cached Element References ------------------------*/
-
 const boardSquares = document.querySelector(".board")
-console.log(boardSquares);
+// console.log(boardSquares);
 
-// const boardSquares = document.querySelector("#message")
+
 /*----------------------------- Event Listeners -----------------------------*/
-
 boardSquares.addEventListener("click", handleClick);
+//need art wau to  update the board waw in ref. in render function us an array to update the board squeares
 
-/*-------------------------------- Functions -------------------------------*/
-
-
+/*-------------------------------- Functions --------------------------------*/
 
 function handleClick(event) {
-console.log(event.target.id)
-  
+  console.log(event.target.id.replace(('sq',' ')));
+  //change the state of the wquares
+  // look up string.prototype.splice to remove the sq
+  //on then need to access square[] to reassign value
+  //
+  const id = event.target.id
+  squares[id] = 1
+  console.log(squares)
 }
-console.log(boardSquares)
+
+// console.log(boardSquares)
+
+
+
+function init() {
+  squares = [
+    null, null, null,
+    null, null, null,
+    null, null, null
+  ]
+  console.log(squares)  //these nulls refer to the game board in order
+
+  // turn = {
+  //   '1': {
+  //     name: 'X'
+  //   }, '2': {
+  //     name: '0'
+  //   }
+  winner = null;
+  }
+
+// render();
+
+//3.3
+init ()
+
+function render() {
+  for(let i = 0; i < squares.length; i++) {
+   console.log(squares[i])
+  
+  
+  }
+}
