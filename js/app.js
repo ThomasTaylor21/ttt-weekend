@@ -1,3 +1,5 @@
+console.log("I am here")
+
 console.log('f in chat')
 
 
@@ -8,62 +10,70 @@ console.log('f in chat')
 
 /*---------------------------- Variables (state) ----------------------------*/
 let squares, winner, turn
-// const player0 = -1
-// const playerX =  1
-// winner = null 
-// let tie= 'T'
+// let playerTurn = [o,x]
+// let gameOutcome = [tie, winner, loser]
+const player0 = -1
+const playerX = 1
+//let winner = null
+
 /*------------------------ Cached Element References ------------------------*/
 const boardSquares = document.querySelector(".board")
-// console.log(boardSquares);
-
+console.log(boardSquares);
+//Need a way to update board squares in the cached references. IN your render function, use squares - an array, to update board squares accordingly.
 
 /*----------------------------- Event Listeners -----------------------------*/
 boardSquares.addEventListener("click", handleClick);
-//need art wau to  update the board waw in ref. in render function us an array to update the board squeares
+
 
 /*-------------------------------- Functions --------------------------------*/
-
-function handleClick(event) {
-  console.log(event.target.id.replace(('sq',' ')));
-  //change the state of the wquares
-  // look up string.prototype.splice to remove the sq
-  //on then need to access square[] to reassign value
+function  handleClick(event) {
+  //console.log(event.target.id);
+  //change the state of the squares in the handleClick function
+  //string.slice- helps remove SQ
   //
-  const id = event.target.id
+  const id = event.target.id.replace('sq','')
   squares[id] = 1
   console.log(squares)
+  if(squares === 1){
+    return X
+  }
+  render()
 }
 
-// console.log(boardSquares)
+init();
 
+function init(){
 
+squares = [
+  null, null, null,
+  null, null, null,
+  null, null, null]
+console.log(squares)  //these nulls refer to the game board in order
 
-function init() {
-  squares = [
-    null, null, null,
-    null, null, null,
-    null, null, null
-  ]
-  console.log(squares)  //these nulls refer to the game board in order
+  
+winner = null;
 
-  // turn = {
-  //   '1': {
-  //     name: 'X'
-  //   }, '2': {
-  //     name: '0'
-  //   }
-  winner = null;
-  }
+render()
 
-// render();
-
-//3.3
-init ()
+}
 
 function render() {
-  for(let i = 0; i < squares.length; i++) {
-   console.log(squares[i])
-  
-  
-  }
+
+  for (let i = 0; i < squares.length; i++){
+  console.log(squares[i])
+  if (squares[i] === 1){
+    boardSquares.children[i].textContent = 'x'
+  } else {
+    (squares[i] != 1)
+    boardSquares.children[i].textContent = '0'
+  } 
+  //else (boardSquares.children[i].textContent = '' )
+    //if else statement could be good here
+    //if the condition is true, then print a value to the board
 }
+}
+
+
+
+
+
