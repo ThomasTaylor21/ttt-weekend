@@ -36,43 +36,61 @@ function  handleClick(event) {
   console.log(squares)
   if(squares === 1){
     return X
-  }
+  } else if
+    (squares === -1)
   render()
 }
 
 init();
 
-function init(){
+function init() {
 
-squares = [
-  null, null, null,
-  null, null, null,
-  null, null, null]
-console.log(squares)  //these nulls refer to the game board in order
-
+  squares = [
+    null, null, null,
+    null, null, null,
+    null, null, null]
+  console.log(squares)  //these nulls refer to the game board in order
+  winnerCombos = [
+    w1 = 0, 1, 2,
+    w2 = 3, 4, 5,
+    w3 = 6, 7, 8,
+    w4 = 0, 3, 5
+    w5 = 1, 4, 7
+    w6 = 2, 5, 8
+    w7 = 0, 4, 8
+    w8 = 2, 4, 6
+  ]
+  if !== (w1, w2, w3, w4, s6, w6, w7, w8)("then it is a tie")
+}
   
 winner = null;
-
+  // let winner = 1{
+  //   if winner = 0("I won")
+  //   else winner = x ("X Wins!")
+}
 render()
 
-}
+
 
 function render() {
 
-  for (let i = 0; i < squares.length; i++){
-  console.log(squares[i])
-  if (squares[i] === 1){
-    boardSquares.children[i].textContent = 'x'
-  } else {
-    (squares[i] != 1)
-    boardSquares.children[i].textContent = '0'
-  } 
+  for (let i = 0; i < squares.length; i++) {
+    console.log(squares[i])
+    if (squares[i] === 1) {
+      boardSquares.children[i].textContent = 'x'
+    } else (squares[i] !== -1)
+      
+      boardSquares.children[i].textContent = '0'
+  }
+} else (squares[i] !== null)
+     if boardSquares.children[i].textContent = ''
+
   //else (boardSquares.children[i].textContent = '' )
     //if else statement could be good here
     //if the condition is true, then print a value to the board
-}
-}
 
+
+//  need to use and innerText to message players
 
 
 
