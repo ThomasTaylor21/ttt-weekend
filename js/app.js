@@ -11,7 +11,6 @@ const winningCombos = [
   [0, 4, 8],
   [2, 4, 6],
 ]
-
 /*---------------------------- Variables (state) ----------------------------*/
 let squares, winner, turn
 
@@ -19,15 +18,12 @@ let squares, winner, turn
 const player0 = -1
 const playerX = 1
 //let winner = null
-
 /*------------------------ Cached Element References ------------------------*/
 const boardSquares = document.querySelector(".board")
 console.log(boardSquares);
 //Need a way to update board squares in the cached references. IN your render function, use squares - an array, to update board squares accordingly.
-
 /*----------------------------- Event Listeners -----------------------------*/
 boardSquares.addEventListener("click", handleClick);
-
 
 /*-------------------------------- Functions --------------------------------*/
 function  handleClick(event) {
@@ -65,23 +61,29 @@ render()
 
 function render() {
 
-  for (let i = 0; i < squares.length; i++){
-  // console.log(squares[i])
-  if (squares[i] === 1){
-    boardSquares.children[i].textContent = 'x'
-  } else if
-    (squares[i] === -1){
-    boardSquares.children[i].textContent = '0'
-  } else {
-    boardSquares.children[i].textContent = " "
-  }
+  for (let i = 0; i < squares.length; i++) {
+    // console.log(squares[i])
+    if (squares[i] === 1) {
+      boardSquares.children[i].textContent = 'x'
+    } else if
+      (squares[i] === -1) {
+      boardSquares.children[i].textContent = '0'
+    } else {
+      boardSquares.children[i].textContent = " "
+    }
 
-// if  (squares[i] === null)
-// boardSquares.children[i].textContent = ''
-//   else (boardSquares.children[i].textContent = '' )
+    // if  (squares[i] === null)
+    // boardSquares.children[i].textContent = ''
+    //   else (boardSquares.children[i].textContent = '' )
     // if else statement could be good here
     //if the condition is true, then print a value to the board
+  
 
+  }
+}
+  function resetButton(event) {
+    resetBtn.addEventListener("click", (boardSquares) => resetButton(null));
 
 }
-}
+
+
