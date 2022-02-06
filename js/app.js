@@ -60,14 +60,14 @@ function init() {
     w7 = 0, 4, 8
     w8 = 2, 4, 6
   ]
-  if !== (w1, w2, w3, w4, s6, w6, w7, w8)("then it is a tie")
+  let winningCombo(w1, w2, w3, w4, s6, w6, w7, w8)("then it is a tie")
 }
   
 winner = null;
   // let winner = 1{
   //   if winner = 0("I won")
   //   else winner = x ("X Wins!")
-}
+
 render()
 
 
