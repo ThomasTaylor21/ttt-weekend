@@ -1,4 +1,3 @@
-console.log("I am here")
 /*-------------------------------- Constants --------------------------------*/
 const winningCombos = [
   [0, 1, 2],
@@ -24,12 +23,14 @@ const playerX = 1
 const boardSquares = document.querySelector(".board")
 console.log(boardSquares);
 
+const message = document.getElementById("message")
+
 // const winnerLoser = document.querySelector("#winnerloser")
 // console.log(winnerloser)
 //Need a way to update board squares in the cached references. IN your render function, use squares - an array, to update board squares accordingly.
 
 const resetBtn = document.getElementById('resetBtn')
-const message =document.get
+
 /*----------------------------- Event Listeners -----------------------------*/
 boardSquares.addEventListener("click", handleClick);
 
@@ -64,8 +65,7 @@ console.log(squares)  //these nulls refer to the game board in order
 turn = 1
 winner = null;
 
-  render()
-  // getWinner()
+render()
 }
 
 
@@ -86,27 +86,31 @@ function render() {
 
   
 }
+
+
+
 resetBtn.addEventListener('click', init)
-  render()
-function getWinner() {
-  for (let i = 0; i < winningCombos.length; i++) {
-    const a = winningCombos[i][0]
-    const b = winningCombos[i][1]
-    const c = winningCombos[i][2]
-    // console.log(winningCombos[i][0]+[1]+[2])
-    if (squares[a] + squares[b] + squares[c] === 3) {
-      console.log("X wins")
-        message.textContent = 'X Wins'; {
-        message.textContent = 'X Wins';
-        message.textContent = 'Tie';
+  // render()
 
-      }
-    }else if ((squares[a] + squares[b] + squares[c] === -3)) {
+
+function getWinner(){
+  for(let i = 0; i < winningCombos.length; i++){
+  //const winner = winningCombos[i]; 
+  // console.log(`This is instance ${i}`)
+ const a = winningCombos[i][0]
+ const b = winningCombos[i][1]
+ const c = winningCombos[i][2]
+//  console.log(a, b, c)
+//   console.log(`This is the third value`, winningCombos[i][2])
+    if (squares[a] + squares[b] + squares[c] === 3){
+      console.log('X wins')
+       message.textContent = 'X wins';
+    } else if (squares[a] + squares[b] + squares[c] === -3){
       console.log('O wins')
-      
+      message.textContent = 'X wins';
     }
-  }
-
-    // if (squares === winningCombos[]))
-  }
-
+  }  
+ 
+}
+init()
+// getWinner()
