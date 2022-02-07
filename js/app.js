@@ -1,5 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-/*-------------------------------- Constants --------------------------------*/
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -45,11 +44,14 @@ function  handleClick(event) {
   //handle click function is running 
   //
   const id = event.target.id.replace('sq','')
-  if (squares[id] === null){
+  if (squares[id] === null && winner === null){
     squares[id] = turn
     turn *= -1
     numOfTurns += 1
-    console.log(squares)
+  console.log(squares)
+  const turnMsg = turn === 1 ? 'X' : 'O'
+  // instructor helped with this
+  message.textContent = 'Turn: ${turm}'
     render()
     getWinner()
   } 
@@ -80,9 +82,11 @@ function render() {
   // console.log(squares[i])
     if (squares[i] === 1){
     boardSquares.children[i].textContent = 'x'
+    // message.textContent = 'Turn: O'
     } else if 
     (squares[i] === -1) {
     boardSquares.children[i].textContent = '0'
+    message.textContent = 'Turn: X'
     } else {
     boardSquares.children[i].textContent = ""
     }
@@ -92,15 +96,15 @@ function render() {
   
 }
 
-function whoseTurn(){
-  turn *= -1
-  if (turn === 1){
-    message.textContent = 'Turn: X'
-  }
-  else if (turn === -1){
-    message.textContent = 'Turn: O'
-  }
-}
+// function whoseTurn(){
+//   turn *= -1
+//   if (turn === 1){
+//     message.textContent = 'Turn: X'
+//   }
+//   else if (turn === -1){
+//     message.textContent = 'Turn: O'
+//   }
+// }
 
 resetBtn.addEventListener('click', init)
 
@@ -118,7 +122,9 @@ function getWinner(){
 //   console.log(`This is the third value`, winningCombos[i][2])
     if (squares[a] + squares[b] + squares[c] === 3){
       console.log('X wins')
-       message.textContent = 'X wins';
+
+      message.textContent = 'X wins';
+      winner = "X"
     } else if (squares[a] + squares[b] + squares[c] === -3){
       console.log('O wins')
       message.textContent = 'O wins';
