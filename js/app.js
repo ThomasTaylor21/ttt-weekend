@@ -69,6 +69,7 @@ turn = 1
 winner = null;
 numOfTurns = 0
 
+message.innerText = ''
 render()
 }
 
@@ -102,6 +103,7 @@ function whoseTurn(){
 }
 
 resetBtn.addEventListener('click', init)
+
   // render()
 
 
