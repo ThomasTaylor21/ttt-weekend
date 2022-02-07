@@ -29,7 +29,7 @@ console.log(boardSquares);
 //Need a way to update board squares in the cached references. IN your render function, use squares - an array, to update board squares accordingly.
 
 const resetBtn = document.getElementById('resetBtn')
-
+const message =document.get
 /*----------------------------- Event Listeners -----------------------------*/
 boardSquares.addEventListener("click", handleClick);
 
@@ -96,12 +96,17 @@ function getWinner() {
     // console.log(winningCombos[i][0]+[1]+[2])
     if (squares[a] + squares[b] + squares[c] === 3) {
       console.log("X wins")
-    } else if ((squares[a] + squares[b] + squares[c] === -3)) {
+        message.textContent = 'X Wins'; {
+        message.textContent = 'X Wins';
+        message.textContent = 'Tie';
+
+      }
+    }else if ((squares[a] + squares[b] + squares[c] === -3)) {
       console.log('O wins')
       
     }
-    
+  }
 
     // if (squares === winningCombos[]))
   }
-}
+
