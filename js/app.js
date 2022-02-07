@@ -1,4 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
+/*-------------------------------- Constants --------------------------------*/
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -16,6 +17,7 @@ let squares, winner, turn
 // let gameOutcome = [isTie, winner, loser]
 const player0 = -1
 const playerX = 1
+let numOfTurns
 //const isTie = // === no winning combos found on the board, != winningCombos
 
 
@@ -46,6 +48,7 @@ function  handleClick(event) {
   if (squares[id] === null){
     squares[id] = turn
     turn *= -1
+    numOfTurns += 1
     console.log(squares)
     render()
     getWinner()
@@ -64,6 +67,7 @@ console.log(squares)  //these nulls refer to the game board in order
 
 turn = 1
 winner = null;
+numOfTurns = 0
 
 render()
 }
@@ -87,7 +91,15 @@ function render() {
   
 }
 
-
+function whoseTurn(){
+  turn *= -1
+  if (turn === 1){
+    message.textContent = 'Turn: X'
+  }
+  else if (turn === -1){
+    message.textContent = 'Turn: O'
+  }
+}
 
 resetBtn.addEventListener('click', init)
   // render()
@@ -107,10 +119,16 @@ function getWinner(){
        message.textContent = 'X wins';
     } else if (squares[a] + squares[b] + squares[c] === -3){
       console.log('O wins')
-      message.textContent = 'X wins';
+      message.textContent = 'O wins';
     }
+    
+      
   }  
- 
+  if(numOfTurns === 9 && winner === null){
+    console.log('Tie')
+    message.textContent = 'Tie';
+  }
+  
 }
 init()
 // getWinner()
